@@ -53,5 +53,5 @@ struct RecipeCard: View {
 }
 
 #Preview {
-    RecipeCard(recipe: Recipe.all[3])
+    RecipeCard(recipe: Recipe.all[0])
 }

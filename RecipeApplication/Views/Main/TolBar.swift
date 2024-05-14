@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct TolBar: View {
+    @State private var selectedTab = 2 // Index of the "New" tab
+
     var body: some View {
         TabView{
             HomeView()
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
-            
+    
             CategoryView()
                 .tabItem {
                     Label("Categories", systemImage: "square.fill.text.grid.1x2")
@@ -39,4 +41,6 @@ struct TolBar: View {
 
 #Preview {
     TolBar()
+        .environmentObject(RecipesViewModel())
+
 }

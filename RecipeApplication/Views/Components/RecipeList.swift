@@ -21,7 +21,9 @@ struct RecipeList: View {
             }
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 150), spacing : 10)], spacing: 10) {
                 ForEach(Recipes){Recipe in
-                    RecipeCard(recipe: Recipe)
+                    NavigationLink(destination: RecipeView(recipe: Recipe)) {
+                        RecipeCard(recipe: Recipe)
+                    }
                     
                 }
             }
@@ -35,5 +37,6 @@ struct RecipeList: View {
 #Preview {
     ScrollView{
         RecipeList(Recipes: Recipe.all)
+            
     }
 }

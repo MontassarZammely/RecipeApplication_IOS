@@ -1,20 +1,19 @@
-//
-//  NewRecipeView.swift
-//  RecipeApplication
-//
-//  Created by Montassar Ben Zammel on 23/4/2024.
-//
 
 import SwiftUI
 
 struct NewRecipeView: View {
+    @State private var showAddRecipe = false
     var body: some View {
         NavigationView {
-            Text("My new Recipes!")
-                .navigationTitle("My new Recipes!")
+            Button("Add New Recipe"){
+                showAddRecipe = true
+            }
+            .navigationTitle("New Recipe")
         }
         .navigationViewStyle(.stack)
-
+        .sheet(isPresented: $showAddRecipe){
+            AddRecipeView()
+        }
     }
 }
 
